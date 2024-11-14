@@ -1,0 +1,82 @@
+.calendar {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.calendar h1 {
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: min(20px, calc(var(--cell-size) * 0.8));
+  flex-shrink: 0;
+}
+
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  flex: 1;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+}
+
+.month-title {
+  color: #ff0000;
+  margin-bottom: 4px;
+  font-size: min(14px, calc(var(--cell-size) * 0.5));
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-size));
+  grid-template-rows: calc(var(--cell-size) * 0.6) repeat(6, var(--cell-size));
+  gap: 4px;
+  justify-content: center;
+}
+
+.weekday {
+  text-align: center;
+  font-size: min(12px, calc(var(--cell-size) * 0.4));
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: min(12px, calc(var(--cell-size) * 0.4));
+  background: white;
+  border-radius: 2px;
+}
+
+.other-month {
+  color: #999;
+}
+
+.weekend {
+  color: #ff4d4f;
+}
+
+@media print {
+  .calendar {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background: white;
+  }
+} 
